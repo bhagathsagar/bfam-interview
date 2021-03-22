@@ -1,0 +1,59 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <!--
+    <link rel="stylesheet" th:href="@{/css/main.css}"/>
+    -->
+
+    <style type="text/css">
+    label {
+        display: inline-block;
+        width: 200px;
+        margin: 5px;
+        text-align: left;
+    }
+    input[type=text] {
+        display: inline-block;
+        width: 200px;
+    }
+    button {
+        padding: 5px;
+        margin: 10px;
+    }
+</style>
+
+
+</head>
+
+<body>
+
+
+
+<main role="main" class="container">
+
+    <h1>Form</h1>
+    <form action="#" th:action="@{/instrumentprice}" th:object="${iPrice}" method="post">
+        <label>Instrument Id:</label>
+        <input type="text" th:field="*{id}" value="${iPrice.id}" />
+
+        <br/>
+        <label>Side:</label>
+        <input type="text" th:field="*{side}" value="${iPrice.side}" />
+
+        <br/>
+        <label>Quat:</label>
+        <input type="text" th:field="*{quat}" value="${iPrice.quat}"/>
+
+        <br/>
+        <input type="submit" value="Submit" />
+    </form>
+    <br/>
+    <span>Price Quotation:</span><span th:text="${iPrice.quotedPrice}"></span><br/>
+
+
+</main>
+<!-- /.container -->
+
+</body>
+</html>
